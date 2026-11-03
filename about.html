@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | ShopSavvy</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #ffffff;
+            color: #222;
+        }
+
+        /* Navbar */
+        .navbar {
+            width: 100%;
+            padding: 18px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+            background: #fff;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: 800;
+            color: #222;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #6955d8;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #6955d8;
+        }
+
+        /* Hero */
+        .about-hero {
+            min-height: 350px;
+            padding: 80px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #f2efff, #f8f7ff, #eae6ff);
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero-content .tag {
+            color: #6955d8;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin: 15px 0;
+            color: #171717;
+        }
+
+        .hero-content h1 span {
+            color: #6955d8;
+        }
+
+        .hero-content p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        /* Common Section */
+        .section {
+            padding: 75px 8%;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-heading h2 {
+            font-size: 32px;
+            color: #222;
+            margin-bottom: 12px;
+        }
+
+        .section-heading p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* Our Story */
+        .story {
+            display: flex;
+            align-items: center;
+            gap: 55px;
+        }
+
+        .story-content,
+        .story-image {
+            flex: 1;
+        }
+
+        .story-content h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .story-content h2 span {
+            color: #6955d8;
+        }
+
+        .story-content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.9;
+            margin-bottom: 15px;
+        }
+
+        .story-image {
+            min-height: 300px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #e9e4ff, #f5f2ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 90px;
+        }
+
+        /* Mission and Vision */
+        .mission-section {
+            background: #f8f7fc;
+        }
+
+        .mission-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .mission-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.04);
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 30px rgba(105,85,216,0.12);
+        }
+
+        .mission-card .icon {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #eeeaff;
+            border-radius: 12px;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .mission-card h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .mission-card p {
+            font-size: 14px;
+            color: #777;
+            line-height: 1.8;
+        }
+
+        /* Why Choose Us */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px 20px;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: #6955d8;
+            transform: translateY(-6px);
+        }
+
+        .feature-icon {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #777;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* CTA */
+        .cta {
+            margin: 20px 8% 75px;
+            padding: 55px 25px;
+            text-align: center;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #6955d8, #8976ed);
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            font-size: 14px;
+            margin-bottom: 25px;
+            color: #eeeaff;
+        }
+
+        .cta a {
+            display: inline-block;
+            background: white;
+            color: #6955d8;
+            padding: 12px 30px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .cta a:hover {
+            background: #eeeaff;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: #171717;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        footer p {
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 16px 5%;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero-content h1 {
+                font-size: 34px;
+            }
+
+            .about-hero {
+                min-height: 300px;
+            }
+
+            .section {
+                padding: 55px 6%;
+            }
+
+            .story {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .story-content h2 {
+                font-size: 27px;
+            }
+
+            .story-image {
+                width: 100%;
+                min-height: 230px;
+            }
+
+            .mission-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading h2 {
+                font-size: 27px;
+            }
+
+            .cta {
+                margin: 10px 5% 50px;
+            }
+
+            .cta h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="./index.html" class="logo">Shop<span>Savvy.</span></a>
+
+        <div class="nav-links">
+            <a href="./index.html">Home</a>
+            <a href="./index.html#featured-products">Shop</a>
+            <a href="./index.html#categories">Categories</a>
+            <a href="./about.html" class="active">About</a>
+        </div>
+    </nav>
+
+    <section class="about-hero">
+        <div class="hero-content">
+            <span class="tag">GET TO KNOW US</span>
+            <h1>About <span>ShopSavvy</span></h1>
+            <p>
+                Shopping made simple, smart and enjoyable.
+                Discover quality products, explore amazing collections
+                and find everything you need in one place.
+            </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="story">
+            <div class="story-content">
+                <h2>Our <span>Story</span></h2>
+
+                <p>
+                    Welcome to ShopSavvy, your online shopping destination.
+                    We created ShopSavvy with a simple idea: make online
+                    shopping easy, convenient and enjoyable for everyone.
+                </p>
+
+                <p>
+                    From electronics and fashion to accessories and home
+                    products, our goal is to bring different product
+                    categories together in one place.
+                </p>
+
+                <p>
+                    We believe that a great shopping experience should
+                    be simple, user-friendly and accessible.
+                </p>
+            </div>
+
+            <div class="story-image">
+                🛍️
+            </div>
+        </div>
+    </section>
+
+    <section class="section mission-section">
+        <div class="section-heading">
+            <h2>Our Mission & Vision</h2>
+            <p>What drives ShopSavvy forward</p>
+        </div>
+
+        <div class="mission-cards">
+            <div class="mission-card">
+                <div class="icon">🎯</div>
+                <h3>Our Mission</h3>
+                <p>
+                    Our mission is to provide a simple and convenient
+                    online shopping experience where customers can
+                    explore different products with ease.
+                </p>
+            </div>
+
+            <div class="mission-card">
+                <div class="icon">💡</div>
+                <h3>Our Vision</h3>
+                <p>
+                    Our vision is to build a trusted online shopping
+                    destination that makes discovering and shopping
+                    for everyday products easier.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-heading">
+            <h2>Why Choose ShopSavvy?</h2>
+            <p>Making your shopping experience better</p>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🛒</div>
+                <h3>Easy Shopping</h3>
+                <p>
+                    Explore products and browse different categories
+                    through a simple interface.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>Wide Collection</h3>
+                <p>
+                    Discover electronics, fashion, shoes, accessories
+                    and home products in one place.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Responsive Design</h3>
+                <p>
+                    Enjoy a smooth browsing experience on desktop,
+                    tablet and mobile devices.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Ready to Start Shopping?</h2>
+        <p>Explore our collections and discover something you love.</p>
+        <a href="./index.html#featured-products">Explore Products →</a>
+    </section>
+
+    <footer>
+        <p>© 2026 ShopSavvy. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
